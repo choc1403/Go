@@ -24,4 +24,17 @@ func main() {
 	fmt.Println("La base: ", base, "\nLa altura: ", altura, "\nLa Area: ", area)
 	fmt.Println()
 
+	// Tipos de datos
+	/*
+		int
+		string
+		float64
+		bool
+		uint --> Para numeros positivos
+		int
+		Complex128 --> numeros complejos(Numeros imaginarios)
+			c:= 10 + 8i
+
+	*/
+
 }
