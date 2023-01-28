@@ -17,6 +17,11 @@ func (myPc *pc) duplicateRam() {
 	myPc.ram = myPc.ram * 2
 }
 
+// Metodo src
+func (myPc pc) String() string {
+	return fmt.Sprintf("Tengo una pc de marca %s con una ram de %d y con un precio de Q%d", myPc.marca, myPc.ram, myPc.precio)
+}
+
 func main() {
 	// Aprender a utilizar Punteros y Structs
 	a := 50
