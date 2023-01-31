@@ -12,7 +12,7 @@ func main() {
 		fmt.Println(i)
 	}
 
-	//For while
+	// For while
 	fmt.Printf("\n\nFor While\n")
 	counter := 0
 
