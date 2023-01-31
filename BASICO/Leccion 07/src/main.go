@@ -12,7 +12,7 @@ func main() {
 	case 0:
 		fmt.Println("Par")
 	default:
-		fmt.Println("impar")
+		fmt.Println("Impar")
 	}
 
 	value := 2
