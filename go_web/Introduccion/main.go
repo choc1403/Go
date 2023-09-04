@@ -7,7 +7,9 @@ import (
 )
 
 func main() {
+	// Creando rutas en go
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Add("Nombre", "Valor de header")
 		fmt.Fprintf(w, "Hola Mundo")
 
 	})
