@@ -14,7 +14,16 @@ import (
 func main() {
 	// Creando rutas en go
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		w.Header().Add("Nombre", "Valor de header") // se podra mostrar en curl -i https://localhost:3000
+		w.Header().Add("Nombre", "Valor de header") // se podra mostrar en curl -i http://localhost:3000
+
+		fmt.Println(r.URL.RawQuery) // Obtener los argumeros de la URL
+		fmt.Println(r.URL.Query())  // Obtiene los argumentos de una URL en forma de map
+
+		name := r.URL.Query().Get("name") // Forma de obtener un argumeto desde el map
+		if len(name) != 0 {
+			fmt.Println(name)
+		}
+
 		fmt.Fprintf(w, "Hola Mundo")
 		fmt.Println("El metodo es +" + r.Method) //Conociendo el metodo efectuado
 		http.Redirect(w, r, "/docs", 301)        // Redireccionamientos
