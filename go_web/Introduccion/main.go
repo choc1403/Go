@@ -56,6 +56,20 @@ func main() {
 		http.Error(w, "Este es un error", http.StatusConflict)
 	})
 
+	http.HandleFunc("/params", func(w http.ResponseWriter, r *http.Request) {
+		// Generando QUERY
+		fmt.Println(r.URL)
+		values := r.URL.Query()
+		values.Del("otro")
+		values.Add("name", "Choc")
+		values.Add("course", "Go Web")
+		values.Add("Job", "Codigo Facilito")
+
+		r.URL.RawQuery = values.Encode()
+		fmt.Println(r.URL)
+		fmt.Fprintf(w, "Hola Mundo")
+	})
+
 	// Para levantar un servidor en go
 	log.Fatal(http.ListenAndServe("localhost:3000", nil))
 }
